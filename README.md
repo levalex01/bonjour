@@ -1,3 +1,9 @@
+#⚠️ Disclaimer
+
+👉 Ce projet est une **pure blague** 🎭.
+Il n’a aucune utilité réelle à part afficher « Bonjour » dans plein de langues avec style.
+Fait uniquement pour le **fun** 😎.
+
 # 🌍 Bonjour
 
 Une petite **Progressive Web App (PWA)** qui affiche _« Bonjour »_ et ses équivalents dans une centaine de langues, avec une animation façon **écran de bienvenue d’un iPad neuf**.  
@@ -56,3 +62,4 @@ Une petite **Progressive Web App (PWA)** qui affiche _« Bonjour »_ et ses équ
 ---
 
 💡 Projet simple et fun pour découvrir le fonctionnement des **Web Apps installables** et les animations multilingues.
+
