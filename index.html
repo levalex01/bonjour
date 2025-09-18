@@ -1,26 +1,66 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bonjour App</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="manifest" href="manifest.json" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <link rel="apple-touch-icon" href="icon-192.png" />
+  <meta charset="UTF-8">
+  <title>Bonjour Multilingue</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: white;
+      font-family: sans-serif;
+      font-size: 3rem;
+      overflow: hidden;
+    }
+    .fade {
+      opacity: 0;
+      transition: opacity 1s;
+      position: absolute;
+    }
+    .fade.show {
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1 id="greeting">Bonjour</h1>
-  </div>
+  <div id="text" class="fade">Bonjour</div>
 
   <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js').then(() => {
-        console.log("Service Worker enregistré !");
-      });
+    const texts = [
+      "Bonjour", "Hello", "Hola", "Hallo", "Ciao", "Olá", "Привет", "你好", "こんにちは", "안녕하세요", 
+      "مرحبا", "שלום", "नमस्ते", "Selam", "Hej", "Hei", "Merhaba", "Γειά σου", "Salut", 
+      "Halo", "Sawubona", "Dumela", "Habari", "Yassou", "Sveiki", "Ahoj", "Szia", "Moi", 
+      "Kia ora", "Kamusta", "Tere", "Përshëndetje", "Բարեւ", "გამარჯობა", "สวัสดี", 
+      "Chào bạn", "Xin chào", "Selamat", "Shalom", "Sawadee", "Salam", "Aloha", 
+      "Bula", "Konnichiwa", "Anyoung", "Jambo", "Mhoro", "Moni", "Tashi Delek", 
+      "Mabuhay", "Ola", "Sannu", "Zdravo", "Pozdrav", "Halo semuanya", "Sveiks", 
+      "Servus", "Zdravei", "Labas", "Hujambo", "Nde-ewo", "Sawubona", "Shikamoo", 
+      "Asalaam alaikum", "Goedendag", "Hoi", "Yo", "Witaj", "Salutare", "Zdravo", 
+      "Dobry den", "Tjena", "Hallå", "Moi moi", "Hei hei", "Sawubona", "Molo", 
+      "Saluton", "Kaixo", "Ongi etorri", "Dobrý deň", "God dag", "Bok", "Zdravo", 
+      "Pozdravi", "Bonjou", "Aloha ʻoe", "Talofa", "Kiora", "Mālō e lelei", 
+      "Ia orana", "Fakaalofa lahi atu", "Kam na mauri", "Halo", "Salam aleikum", 
+      "Kalimera", "Privet", "Dobry", "Annyeong", "Ni hao", "Selamat pagi"
+    ];
+
+    let index = 0;
+    const textEl = document.getElementById("text");
+
+    function showText() {
+      textEl.classList.remove("show");
+      setTimeout(() => {
+        textEl.textContent = texts[index];
+        textEl.classList.add("show");
+        index = (index + 1) % texts.length;
+      }, 1000); // temps de fade-out
     }
+
+    setInterval(showText, 2000); // change toutes les 2 secondes
+    showText(); // démarrage
   </script>
 </body>
 </html>
