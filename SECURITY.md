@@ -1,3 +1,9 @@
+# ⚠️ Disclaimer
+
+👉 Ce projet est une **pure blague** 🎭.
+Il n’a aucune utilité réelle à part afficher « Bonjour » dans plein de langues avec style.
+Fait uniquement pour le **fun** 😎.
+
 # 🔒 Politique de sécurité
 
 ## Versions supportées
